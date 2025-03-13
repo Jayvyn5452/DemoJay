@@ -3,7 +3,7 @@ name: CI Workflow
 on: 
   push:  # Runs when code is pushed to any branch
     branches:
-      - main
+      - master
       - dev  # Modify to include specific branches
 
 jobs:
