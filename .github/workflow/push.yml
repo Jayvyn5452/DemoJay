@@ -1,0 +1,26 @@
+name: CI Workflow
+
+on: 
+  push:  # Runs when code is pushed to any branch
+    branches:
+      - main
+      - dev  # Modify to include specific branches
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3  # Action 1: Get the code
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18  # Using Node.js 18
+
+      - name: Install dependencies
+        run: npm install  # Action 2: Install project dependencies
+
+      - name: Run a script
+        run: echo "Code pushed! Workflow executed successfully!"
